@@ -1,13 +1,13 @@
 package org.thelastride.theend.Students;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity(name = "students")
 public class StudentModel {
-    @Id
+    @Id@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column(unique = true)
     private String hitMail;
     @Column
     private String yearEnrolled;

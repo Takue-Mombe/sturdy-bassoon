@@ -17,8 +17,8 @@ public class programmeController {
     @PostMapping("/save")
     public String programmeModel(@RequestBody ProgrammeModel programmeModel){
         ProgrammeModel createProgramme = programmeService.saveProgramme(programmeModel);
-        System.out.println("Event created successfully with ID: " + createProgramme.getId());
-        return "Saved...";
+        System.out.println("Programme created successfully with ID: " + createProgramme.getId());
+        return "<div>Saved...</div>";
 
     }
 

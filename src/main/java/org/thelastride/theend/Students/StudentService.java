@@ -16,9 +16,9 @@ public class StudentService {
     public StudentModel saveStudents(StudentModel studentModel){
         return studentRepo.save(studentModel);
     }
-    public void deleteStudent(@PathVariable String hitMail)
+    public void deleteStudent(@PathVariable Long id)
     {
-        studentRepo.deleteById(hitMail);
+        studentRepo.deleteById(id);
     }
     public List<StudentModel>findAll(){
         return studentRepo.findAll();

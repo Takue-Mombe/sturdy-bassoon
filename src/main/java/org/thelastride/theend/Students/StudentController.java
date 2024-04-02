@@ -27,17 +27,18 @@ public class StudentController {
         System.out.println("Student Created: " + createStudent.getHitMail());
         return "redirect:/StudentApi/students/all"; // Redirect to the student list page after saving
     }
-    @PostMapping("/StudentApi/upload-csv")
+    @PostMapping("/upload-csv")
     public String saveCSV(@RequestParam("file") MultipartFile file) {
         try {
             studentCSVService.saveDataFromCsv(file);
-            return "redirect:/StudentApi/students/all";
+            System.out.println(studentService.findAll());
+            return "saved";
         } catch (IOException e) {
             return "error during upload";
         }
     }
     @DeleteMapping("/delete/{id}")
-    public String deleteStudent(@PathVariable String id){
+    public String deleteStudent(@PathVariable Long id){
         studentService.deleteStudent(id);
         return "deleted...";
     }
