@@ -1,0 +1,40 @@
+package org.thelastride.theend.Lecturers;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@Controller
+@RequestMapping("/LecturerApi")
+public class LecturerController {
+    @Autowired
+    private LecturerService lecturerService;
+
+    @PostMapping("/save")
+    public String saveLecturer(@ModelAttribute("LecturerModel") LecturerModel lecturerModel){
+        LecturerModel createLecturer=lecturerService.saveLecturer(lecturerModel);
+        System.out.println("Lecturer created successfully with ID: " + createLecturer.getLecturerId());
+        return "redirect:/LecturerApi/getAll";
+    }
+    @DeleteMapping("/delete/{id}")
+    public String deleteLecturer(@PathVariable String id){
+        lecturerService.deleteLecturer(id);
+        return "redirect:/LecturerApi/getAll";
+    }
+    @GetMapping("/getAll")
+    public String getAll(Model model){
+        List<LecturerModel> lecturers=lecturerService.getAllLecturers();
+        model.addAttribute("lecturers",lecturers);
+        return "";
+    }
+    @GetMapping("/getByID/{id}")
+    public String getLecturer(@PathVariable String id, Model model){
+        Optional<LecturerModel> lecturer=lecturerService.getLecturerId(id);
+        return "Found";
+    }
+}
