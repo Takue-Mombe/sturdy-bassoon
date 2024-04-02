@@ -22,7 +22,7 @@ public class LecturerController {
         return "redirect:/LecturerApi/getAll";
     }
     @DeleteMapping("/delete/{id}")
-    public String deleteLecturer(@PathVariable String id){
+    public String deleteLecturer(@PathVariable Long id){
         lecturerService.deleteLecturer(id);
         return "redirect:/LecturerApi/getAll";
     }

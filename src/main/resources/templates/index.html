@@ -13,6 +13,11 @@
           href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"
   />
   <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body id="page-top">
 <div id="wrapper">
@@ -24,35 +29,41 @@
               class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
               href="#"
       ><div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
+        <i class="fas fa-laugh-wink" style="color: black"></i>
       </div>
-        <div class="sidebar-brand-text mx-3"><span>Brand</span></div></a
+        <div class="sidebar-brand-text mx-3"><span style="color: black">LC</span></div></a
       >
       <hr class="sidebar-divider my-0" />
       <ul class="navbar-nav text-light" id="accordionSidebar">
         <li class="nav-item">
-          <a class="nav-link active" href="index.html"
-          ><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a
+          <a class="nav-link active" th:href="@{/adminApi/home}">
+            <i class="fas fa-tachometer-alt"  style="color: black"></i><span style="color: black">Dashboard</span></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="profile.html"
-          ><i class="fas fa-user"></i><span>Profile</span></a
+          <a class="nav-link active" th:href="@{/adminApi/courseDetails}">
+          <i class="fas fa-table" style="color: black"></i><span style="color: black">Table</span></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="table.html"
-          ><i class="fas fa-table"></i><span>Table</span></a
+          <a class="nav-link active" th:href="@{/adminApi/courseDetails}">
+            <i class="fas fa-table" style="color: black"></i><span style="color: black">Courses</span></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login.html"
-          ><i class="far fa-user-circle"></i><span>Login</span></a
+          <a class="nav-link active" th:href="@{/adminApi/studentDetails}">
+          <i class="fas fa-table" style="color: black"></i><span style="color: black">Students</span></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register.html"
-          ><i class="fas fa-user-circle"></i><span>Register</span></a
+          <a class="nav-link active" th:href="@{/adminApi/LecturerDetails}">
+
+          <i class="fas fa-table" style="color: black"></i><span style="color: black">Lecturers</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" th:href="@{/adminApi/courseDetails}">
+          <i class="fas fa-table" style="color: black"></i><span style="color: black">Programmes</span></a
           >
         </li>
       </ul>
@@ -107,37 +118,7 @@
                 </form>
               </div>
             </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <div class="nav-item dropdown show no-arrow">
-                <a
-                        class="dropdown-toggle nav-link"
-                        aria-expanded="true"
-                        data-bs-toggle="dropdown"
-                        href="#"
-                ></a>
-                <div
-                        class="dropdown-menu dropdown-menu-end show dropdown-list animated--grow-in"
-                        data-bs-popper="none"
-                ></div>
-              </div>
-            </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <div class="nav-item dropdown no-arrow">
-                <a
-                        class="dropdown-toggle nav-link"
-                        aria-expanded="false"
-                        data-bs-toggle="dropdown"
-                        href="#"
-                ></a>
-                <div
-                        class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in"
-                ></div>
-              </div>
-              <div
-                      class="shadow dropdown-list dropdown-menu dropdown-menu-end"
-                      aria-labelledby="alertsDropdown"
-              ></div>
-            </li>
+
             <div class="d-none d-sm-block topbar-divider"></div>
             <li class="nav-item dropdown no-arrow">
               <div class="nav-item dropdown no-arrow">
@@ -251,7 +232,7 @@
                     <div
                             class="text-uppercase text-info fw-bold text-xs mb-1"
                     >
-                      <span>total programmes</span>
+                      <span>total <br> programmes</span>
                     </div>
                     <div class="row g-0 align-items-center">
                       <div class="col-auto">
@@ -281,7 +262,7 @@
                     <div
                             class="text-uppercase text-info fw-bold text-xs mb-1"
                     >
-                      <span>total courses</span>
+                      <span>total <br> courses</span>
                     </div>
                     <div class="row g-0 align-items-center">
                       <div class="col-auto">
@@ -329,12 +310,12 @@
         </div>
       </div>
     </div>
-    <footer class=l"bg-white>
-    <div class="container my-auto">
-      <div class="text-center my-auto copyright">
-        <span>Copyright © Brand 2024</span>
+    <footer class="bg-white sticky-footer">
+      <div class="container my-auto">
+        <div class="text-center my-auto copyright">
+          <span>Copyright © LECTURER'S COMPANION 2024</span>
+        </div>
       </div>
-    </div>
     </footer>
   </div>
   <a class="border rounded d-inline scroll-to-top" href="#page-top"
@@ -343,5 +324,10 @@
 </div>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/script.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>

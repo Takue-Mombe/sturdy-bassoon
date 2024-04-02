@@ -6,10 +6,34 @@ import java.util.Date;
 
 @Entity(name = "lecturers")
 public class LecturerModel {
-    @Id
+    @Id@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column(unique = true)
     private String lecturerId;
     @Column
     private String lecturerName;
+    @Column
+    @Temporal(TemporalType.DATE)
+    private Date dateOfBirth;
+
+    @Column
+    private String email;
+
+    @Column
+    private String phoneNumber;
+
+    @Column
+    private String address;
+
+    @Column
+    private String department;
+
+    @Temporal(TemporalType.DATE)
+    @Column
+    private Date hireDate;
+
+    @Column
+    private String highestDegree;
 
     public String getLecturerId() {
         return lecturerId;
@@ -27,11 +51,11 @@ public class LecturerModel {
         this.lecturerName = lecturerName;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -79,30 +103,15 @@ public class LecturerModel {
         return highestDegree;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public void setHighestDegree(String highestDegree) {
         this.highestDegree = highestDegree;
     }
-
-    @Column
-    private String dateOfBirth;
-
-    @Column
-    private String email;
-
-    @Column
-    private String phoneNumber;
-
-    @Column
-    private String address;
-
-    @Column
-    private String department;
-
-    @Temporal(TemporalType.DATE)
-    @Column
-    private Date hireDate;
-
-    @Column
-    private String highestDegree;
-
 }

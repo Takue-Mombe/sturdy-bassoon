@@ -16,14 +16,14 @@ public class LecturerService {
     public List<LecturerModel> getAllLecturers(){
         return lecturerRepo.findAll();
     }
-    public Optional<LecturerModel> getLecturerId(String LecturerId){
-        return lecturerRepo.findById(LecturerId);
+    public Optional<LecturerModel> getLecturerId(String  LecturerId){
+        return lecturerRepo.findBylecturerId(LecturerId);
 
     }
     public LecturerModel saveLecturer(LecturerModel lecturerModel){
         return   lecturerRepo.save(lecturerModel);
     }
-    public void deleteLecturer(@PathVariable String  LecturerId){
+    public void deleteLecturer(@PathVariable Long  LecturerId){
         lecturerRepo.deleteById(LecturerId);
     }
 

@@ -2,5 +2,9 @@ package org.thelastride.theend.Lecturers;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface LecturerRepo extends JpaRepository<LecturerModel,String> {
+import java.util.Optional;
+
+public interface LecturerRepo extends JpaRepository<LecturerModel,Long> {
+
+    Optional<LecturerModel> findBylecturerId(String lectureId);
 }
